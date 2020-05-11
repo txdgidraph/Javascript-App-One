@@ -19,13 +19,35 @@
           case 4:
             answer = "Invalid";
             break;
+        }
+        return answer;
+      }
+      console.log(caseInSwitch(2));
+
+      // Default in Switch Case
+      // Default in Switch Case
+      // Default in Switch Case
+      function DefaultCaseInSwitch(val) {
+        switch (val) {
+          case 1:
+            answer = "Alpha";
+            break;
+          case 2:
+            answer = "Gamma";
+            break;
+          case 3:
+            answer = "Beta";
+            break;
+          case 4:
+            answer = "Invalid";
+            break;
           default:
-            answer = "WRONG CHOICE !!";
+            answer = "Wrong Choice";
             break;
         }
         return answer;
       }
-      console.log(caseInSwitch(8));
+      console.log(DefaultCaseInSwitch(10));
     </script>
   </body>
 </html>
