@@ -82,9 +82,9 @@
       //Returning early Pattern from Functions
       //Returning early Pattern from Functions
       //Returning early Pattern from Functions
-      
+
       function abTest(a, b) {
-        if (a < 0 || b < 0){
+        if (a < 0 || b < 0) {
           return undefined;
         }
       }
@@ -93,8 +93,34 @@
       //Counting Crads
       //Counting Crads
       //Counting Crads
-      
+
       //1:45:17
+
+      // Javascript objects
+      var ourDog = {
+        name:"Bosco",
+        legs:4,
+        tails:1,
+        friends:["everything"]
+      }; //Access object values with dot notation
+      var nameValue = ourDog.name;
+      console.log(nameValue);
+      var legsValue = ourDog.legs;
+      console.log(legsValue)
+      //Access object values with bracket notation
+      var tailsValue=ourDog["tails"];
+      console.log(tailsValue)
+      //Update object properties using dot notation
+      ourDog.name = "Tommy";
+      newName = ourDog.name;
+      console.log(newName)
+      //Add new properties to object
+      ourDog.color="white n Black";
+      var dogColor = ourDog.color;
+      console.log(dogColor);
+      //You can delete object properties
+      delete ourDog.tails;
+      console.log(ourDog.tails);//will return nothing
     </script>
   </body>
 </html>
