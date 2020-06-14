@@ -98,29 +98,123 @@
 
       // Javascript objects
       var ourDog = {
-        name:"Bosco",
-        legs:4,
-        tails:1,
-        friends:["everything"]
+        name: "Bosco",
+        legs: 4,
+        tails: 1,
+        friends: ["everything"],
       }; //Access object values with dot notation
       var nameValue = ourDog.name;
       console.log(nameValue);
       var legsValue = ourDog.legs;
-      console.log(legsValue)
+      console.log(legsValue);
       //Access object values with bracket notation
-      var tailsValue=ourDog["tails"];
-      console.log(tailsValue)
+      var tailsValue = ourDog["tails"];
+      console.log(tailsValue);
       //Update object properties using dot notation
       ourDog.name = "Tommy";
       newName = ourDog.name;
-      console.log(newName)
+      console.log(newName);
       //Add new properties to object
-      ourDog.color="white n Black";
+      ourDog.color = "white n Black";
       var dogColor = ourDog.color;
       console.log(dogColor);
       //You can delete object properties
       delete ourDog.tails;
-      console.log(ourDog.tails);//will return nothing
+      console.log(ourDog.tails); //will return nothing
+
+      //Use objects for lookup instead of stuff like switch case
+      function myFxn(val) {
+        var result = "";
+
+        var lookup = {
+          name: "GIDRAPH",
+          age: 24,
+          institution: "Kibabii Uni",
+        };
+        result_1 = lookup[val];
+        return result_1;
+      }
+      console.log(myFxn("age"));
+
+      //Testing objects for properties
+      var myObj = {
+        gift: "pony",
+        pet: "kitten",
+        bed: "sleigh",
+      };
+      function checkObj(checkProp) {
+        if (myObj.hasOwnProperty(checkProp)) {
+          return myObj[checkProp];
+        } else {
+          return "Not Found";
+        }
+      }
+      console.log(checkObj("gift"));
+
+      //Accessing Nested Objects
+      var myStorage = {
+        car: {
+          inside: {
+            "glove box": "maps",
+            "passenger seat": "crumbs",
+          },
+          outside: {
+            trunk: "jack",
+          },
+        },
+      };
+      var gloveBoxContents = myStorage.car.inside["glove box"];
+      console.log(gloveBoxContents);
+
+      //Accessing Nested Arrays
+      var myPlants = [
+        {
+          type: "flowers",
+          list: ["rose", "tulip", "dandelion"],
+        },
+        {
+          type: "trees",
+          list: ["fir", "pine", "birch"],
+        },
+      ];
+
+      var secondTree = myPlants[1].list[1];
+      console.log(secondTree);
+
+      //Record Collection
+      var collection = {
+        2548: {
+          album: "slippery when wet",
+          artists: "Bon Jovil",
+          tracks: ["Let it rock", "You give love a bad name"],
+        },
+        2468: {
+          album: "slippery when wet",
+          artists: "Bon Jovil",
+          tracks: ["Let it rock", "You give love a bad name"],
+        },
+        2468: {
+          album: "okonkwo",
+          artists: "azziad",
+          tracks: ["pppp", "kkkkk"],
+        },
+        2468: {
+          album: "Promises",
+          artists: "Tonnny",
+          tracks: ["yyyyy", "xxxxx"],
+        },
+      };
+
+      var collectionCopy = JSON.parse(JSON.stringify(collection));//save a copy of collection
+
+      function updateRecords(id,prop,value){
+        if (value ===""){
+          delete collection[id][prop];
+        }else if (prop ==="tracks"){
+          collection[id][prop]=collection[id][prop] || [];
+          collection[id][prop].push(value);
+        }
+      };
     </script>
   </body>
 </html>
